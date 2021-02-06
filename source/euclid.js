@@ -1,18 +1,18 @@
 'use strict';
 
 /***
- * Находит НОД двух чисел
+ * Finds gcd of two numbers
  *
- * @param x - первое число
- * @param y - второе число
+ * @param {number} x - first number
+ * @param {number} y - second number
  * @returns {number}
  */
 const nod = (x, y) => x !== 0 ? nod(y % x, x) : y;
 
 /***
- * Находит НОД n чисел
+ * Finds gcd of n numbers
  *
- * @param numbers - n чисел
+ * @param {number[]} numbers - array of numbers
  * @returns {number}
  */
 const euclid = (...numbers) => numbers.reduce((max, current) => nod(max, Math.abs(current)), 0)
